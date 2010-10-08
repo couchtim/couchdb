@@ -12,8 +12,11 @@ os_process_timeout = 5000 ; 5 seconds. for view and external servers.
 max_dbs_open = 100
 delayed_commits = true ; set this to false to ensure an fsync before 201 Created is returned
 uri_file = %localstatelibdir%/couch.uri
-btree_cache_size = 100    ; max number of cached BTree nodes
+btree_cache_size = 500    ; max number of cached BTree nodes
 btree_cache_policy = lru  ; must be lru or mru
+use_doc_cache = true
+doc_cache_size = 100      ; max number of cached documents per database
+doc_cache_policy = lru    ; must be lru or mru
 
 [httpd]
 port = 5984
